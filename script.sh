@@ -22,6 +22,15 @@ fi
 
 mkdir -p "$DEST"
 
+# ======= DRAMATIC VOICE INTRO =======
+echo
+echo "=============================="
+echo " 🔊 Initiating Data Extraction"
+echo "=============================="
+espeak -v en-westmids -s70 "Don't worry. Daddy's home."
+echo -e "\a"
+sleep 1
+
 # ======= COPY FUNCTION =======
 copy_files() {
     SRC="$1"
@@ -48,4 +57,3 @@ tar czf "$ARCHIVE" -C "$MOUNT_PATH" "$(basename "$DEST")" 2>/dev/null
 rm -rf "$DEST"
 
 echo "[✔] Finished copying. Archive: $ARCHIVE" >> "$LOG"
-
